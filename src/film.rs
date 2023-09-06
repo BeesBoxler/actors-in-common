@@ -1,11 +1,15 @@
 use crate::actor::Actor;
-use serde_flat_path::flat_path;
 
-#[flat_path]
-#[derive(serde::Deserialize, Debug)]
+#[derive(serde::Deserialize, Debug, Clone)]
 pub struct Film {
     pub title: String,
+    pub id: usize,
 
-    #[flat_path("credits.cast")]
+    #[serde(default)]
+    pub credits: Credits,
+}
+
+#[derive(Default, Debug, serde::Deserialize, Clone)]
+pub struct Credits {
     pub cast: Vec<Actor>,
 }
