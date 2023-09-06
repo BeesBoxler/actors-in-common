@@ -10,7 +10,6 @@ dependencies = [
  "futures",
  "reqwest",
  "serde",
- "serde_flat_path",
  "serde_json",
  "tokio",
 ]
@@ -240,7 +239,7 @@ checksum = "89ca545a94061b6365f2c7355b4b32bd20df3ff95f02da9329b34ccc3bd6ee72"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.31",
+ "syn",
 ]
 
 [[package]]
@@ -544,7 +543,7 @@ checksum = "a948666b637a0f465e8564c73e89d4dde00d72d4d473cc972f390fc3dcee7d9c"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.31",
+ "syn",
 ]
 
 [[package]]
@@ -727,18 +726,7 @@ checksum = "4eca7ac642d82aa35b60049a6eccb4be6be75e599bd2e9adb5f875a737654af2"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.31",
-]
-
-[[package]]
-name = "serde_flat_path"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c8f47e5f6a01f9fa03ce7a22a6970913341c7526cc72a69a3a20a4534e41abd"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 1.0.109",
+ "syn",
 ]
 
 [[package]]
@@ -791,17 +779,6 @@ checksum = "2538b18701741680e0322a2302176d3253a35388e2e62f172f64f4f16605f877"
 dependencies = [
  "libc",
  "windows-sys",
-]
-
-[[package]]
-name = "syn"
-version = "1.0.109"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
-dependencies = [
- "proc-macro2",
- "quote",
- "unicode-ident",
 ]
 
 [[package]]
@@ -868,7 +845,7 @@ checksum = "630bdcf245f78637c13ec01ffae6187cca34625e8c63150d424b59e55af2675e"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.31",
+ "syn",
 ]
 
 [[package]]
@@ -1001,7 +978,7 @@ dependencies = [
  "once_cell",
  "proc-macro2",
  "quote",
- "syn 2.0.31",
+ "syn",
  "wasm-bindgen-shared",
 ]
 
@@ -1035,7 +1012,7 @@ checksum = "54681b18a46765f095758388f2d0cf16eb8d4169b639ab575a8f5693af210c7b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.31",
+ "syn",
  "wasm-bindgen-backend",
  "wasm-bindgen-shared",
 ]

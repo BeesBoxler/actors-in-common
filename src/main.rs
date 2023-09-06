@@ -6,7 +6,7 @@ mod tmdb_api;
 
 use actor::Actor;
 use film::Film;
-use futures;
+
 use tmdb_api::TmdbApi;
 
 #[tokio::main]
@@ -18,7 +18,7 @@ async fn main() {
     let films = futures::future::join_all(
         futures::future::join_all(titles.iter().map(|title| async {
             let results = tmdb_api.search_film(&title.clone()).await.unwrap();
-            if results.results.len() == 0 {
+            if results.results.is_empty() {
                 std::process::exit(-1);
             }
             results.results[0].id
