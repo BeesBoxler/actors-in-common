@@ -1,5 +1,3 @@
-
-
 use serde::de::DeserializeOwned;
 
 use crate::{actor::Actor, film::Film, query::Query};

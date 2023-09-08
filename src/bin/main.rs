@@ -1,13 +1,7 @@
 #![allow(dead_code)]
-mod actor;
-mod film;
-mod query;
-mod tmdb_api;
-
-use actor::Actor;
-use film::Film;
-
-use tmdb_api::TmdbApi;
+use actors_in_common::actor::Actor;
+use actors_in_common::compare_films;
+use actors_in_common::tmdb_api::TmdbApi;
 
 #[tokio::main]
 async fn main() {
@@ -51,18 +45,4 @@ fn get_titles_from_args() -> Vec<String> {
     }
 
     args[1..3].to_vec()
-}
-
-fn compare_films(a: &Film, b: &Film) -> Vec<Actor> {
-    a.credits
-        .cast
-        .iter()
-        .filter_map(|actor| {
-            if b.credits.cast.contains(actor) {
-                Some(actor.clone())
-            } else {
-                None
-            }
-        })
-        .collect()
 }
